@@ -20,9 +20,22 @@ es el color en su máxima intensidad.
 -Los colores se definen mediante tuplas de 3 valores, donde el primer valor es el rojo, 
 el segundo es el verde y el tercero es el azul.
 """
+#Con la libreria color
 red = pygame.Color(255, 0, 0) #0 - 255
 green = pygame.Color(0, 255, 0) #0 - 255
 blue = pygame.Color(0, 0, 255) #0 - 255
+
+#Con tuplas
+rojo = (255, 0, 0) #0 - 255
+verde = (0, 255, 0) #0 - 255
+azul = (0, 0, 255) #0 - 255
+
+#Rectangulos
+rect = pygame.Rect(0, 0, 200, 200) #x, y, width, height
+rect.center = (width // 2, height // 2) #Centramos el rectangulo en la ventana del juego
+
+print(rect) #Imprimimos las propiedades del rectangulo
+print(rect.x, rect.y) #Imprimimos la posición del rectangulo
 
 #Generamos un ciclo infinito para que la ventana del juego se mantenga abierta
 while True:
@@ -33,4 +46,6 @@ while True:
             pygame.quit()
             sys.exit() #Evita errores del sistema al cerrar la ventana del juego
     surface.fill(blue) #Rellenamos la ventana del juego con el color definido
+    #Dibujamos un rectangulo en la ventana del juego
+    pygame.draw.rect(surface, red, rect) #Donde se dibuja el rectangulo, color del rectangulo, rectangulo a dibujar
     pygame.display.update() #Actualizamos la ventana del juego para que se vea el color de fondo
