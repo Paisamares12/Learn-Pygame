@@ -63,8 +63,8 @@ while True:
     El orden al dibujar los objetos es importante, ya que si dibujamos un objeto encima de otro, 
     el objeto dibujado primero quedará debajo del objeto dibujado después.
     Draw
-    -Donde se dibujara la figura
-    -Color de la figura
+    1.Donde se dibujara la figura
+    2.Color de la figura
     """
 
     #Posición del rectangulo, tamaño del rectangulo
@@ -75,6 +75,19 @@ while True:
 
     #Posición inicial de la linea, posición final de la linea, grosor de la linea
     pygame.draw.line(surface, red, (0, 100), (width, height), 5) 
+
+    #Triangulo 
+    # Lista de tuplas con las coordenadas de los vertices del triangulo
+    pygame.draw.polygon(surface, white, [(400, 100), (500, 300), (300, 300)]) #Las tuplas se unen mediante lineas
+
+    #Poligono
+    pygame.draw.polygon(surface, red, [
+        (146, 0),
+        (291, 106),
+        (236, 277),
+        (56, 277),
+        (0, 106)
+    ])
 
     #Actualizamos la ventana del juego
     pygame.display.update() 
