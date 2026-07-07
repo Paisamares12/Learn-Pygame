@@ -11,6 +11,16 @@ height = 600
 
 #Creamos la ventana del juego y definimos su tamaño
 surface = pygame.display.set_mode((width, height)) #surface
+
+surface2 = pygame.Surface((500, 500)) #surface)
+surface2.fill((255, 0, 0)) #Rellenamos la surface2 con el color rojo
+
+#Obtenemos el rectangulo de la surface2
+rect3 = surface2.get_rect() 
+
+#Centramos la surface2 en la ventana del juego
+rect3.center = (width // 2, height // 2) 
+
 #Le damos un título a la ventana del juego
 pygame.display.set_caption("Crabby")   
 """
@@ -56,6 +66,7 @@ while True:
     #Rellenamos la ventana del juego con el color definido
     surface.fill(blue) 
 
+
     #Dibujamos los rectangulos en la ventana del juego
     pygame.draw.rect(surface, red, rect) #Donde ,color, rectangulo a dibujar
     pygame.draw.rect(surface, green, rect2) 
@@ -88,6 +99,12 @@ while True:
         (56, 277),
         (0, 106)
     ])
+
+    #Dibuja la surface2 en la surface principal
+    surface.blit(surface2, rect3) #Las coordenadas se pueden poner mediante una tupla o un rect
+
+    #Dibujar un rectangulo dentro de la surface2
+    pygame.draw.rect(surface2, blue, (50, 50, 200, 100))
 
     #Actualizamos la ventana del juego
     pygame.display.update() 
